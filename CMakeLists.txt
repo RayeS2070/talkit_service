@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.12)
-project(pg_service_template CXX)
+cmake_minimum_required(VERSION 3.28)
+project(talkit_service CXX)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED On)
 
 # Adding userver dependency
 find_package(userver COMPONENTS core postgresql QUIET)
