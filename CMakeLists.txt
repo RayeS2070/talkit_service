@@ -54,12 +54,7 @@ add_executable(${PROJECT_NAME}_benchmark
 target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE ${PROJECT_NAME}_objs userver::ubench)
 add_google_benchmark_tests(${PROJECT_NAME}_benchmark)
 
-
-# Functional Tests
-include(UserverTestsuite)
-
 userver_testsuite_add_simple()
-
 
 # Install
 include(GNUInstallDirs)

@@ -13,5 +13,6 @@ compile_commands.json
 cmake-build-*
 Testing/
 .DS_Store
+install/
 Makefile.local
 third_party/userver

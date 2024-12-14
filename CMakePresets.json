@@ -1,0 +1,91 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "gcc-debug",
+            "description": "Using compilers: C = /usr/bin/gcc, CXX = /usr/bin/g++",
+            "binaryDir": "${sourceDir}/build_debug",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/bin/gcc",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+                "CMAKE_CXX_EXTENSIONS": false,
+                "USERVER_SANITIZE": "addr ub",
+                "USERVER_FEATURE_PATCH_LIBPQ": false,
+                "USERVER_FORCE_DOWNLOAD": true,
+                "CPM_SOURCE_CACHE": "~/.cache/cpm",
+                "DUSERVER_USE_CCACHE": true
+            },
+            "environment": {
+                "TESTSUITE_PGSQL_BINDIR": "/usr/local/pgsql/bin"
+            }
+        },
+        {
+            "name": "gcc-release",
+            "description": "Using compilers: C = /usr/bin/gcc, CXX = /usr/bin/g++",
+            "binaryDir": "${sourceDir}/build_release",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/bin/gcc",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+                "CMAKE_CXX_EXTENSIONS": false,
+                "USERVER_SANITIZE": "addr ub",
+                "USERVER_FEATURE_PATCH_LIBPQ": false,
+                "USERVER_FORCE_DOWNLOAD": true,
+                "CPM_SOURCE_CACHE": "~/.cache/cpm",
+                "DUSERVER_USE_CCACHE": true
+            },
+            "environment": {
+                "TESTSUITE_PGSQL_BINDIR": "/usr/local/pgsql/bin"
+            }
+        },
+        {
+            "name": "clang-debug",
+            "description": "Using compilers: C = /usr/bin/clang, CXX = /usr/bin/clang++",
+            "binaryDir": "${sourceDir}/build_debug",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/bin/clang",
+                "CMAKE_CXX_COMPILER": "/usr/bin/clang++",
+                "CMAKE_LINKER_TYPE": "LLD",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+                "CMAKE_CXX_EXTENSIONS": false,
+                "USERVER_SANITIZE": "addr ub",
+                "USERVER_FORCE_DOWNLOAD_PACKAGES": false,
+                "CPM_SOURCE_CACHE": "~/.cache/cpm",
+                "USERVER_USE_CCACHE": true
+            },
+            "environment": {
+                "TESTSUITE_PGSQL_BINDIR": "/usr/local/pgsql/bin"
+            }
+        },
+        {
+            "name": "clang-release",
+            "description": "Using compilers: C = /usr/bin/clang, CXX = /usr/bin/clang++",
+            "binaryDir": "${sourceDir}/build_release",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/bin/clang",
+                "CMAKE_CXX_COMPILER": "/usr/bin/clang++",
+                "CMAKE_LINKER_TYPE": "LLD",
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+                "CMAKE_CXX_EXTENSIONS": false,
+                "USERVER_SANITIZE": "addr ub",
+                "USERVER_FEATURE_PATCH_LIBPQ": false,
+                "USERVER_FORCE_DOWNLOAD": true,
+                "CPM_SOURCE_CACHE": "~/.cache/cpm",
+                "DUSERVER_USE_CCACHE": true
+            },
+            "environment": {
+                "TESTSUITE_PGSQL_BINDIR": "/usr/local/pgsql/bin"
+            }
+        }
+    ]
+}
